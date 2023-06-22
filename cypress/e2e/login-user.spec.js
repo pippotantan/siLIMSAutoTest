@@ -1,4 +1,12 @@
 describe('Simple Test POC: Login and logout user', () => {    
+
+    it('Visit and load SiLIMS client app', () => {
+      const url = '/client/#/login';
+      cy.viewport(1280, 720);
+      cy.visit(url);
+      cy.url().should('contain', url, {timeout:60000});
+    });
+
     it('Logins user', () => {
       cy.fixture('user-data')
             .then(data => {
