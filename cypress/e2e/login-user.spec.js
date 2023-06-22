@@ -1,15 +1,12 @@
 describe('Simple Test POC: Login and logout user', () => {    
     it('Logins user', () => {
-      cy.viewport(1280, 720)
-      cy.visit('/client/#/login')
-      cy.url()
-        .should('contain', '/login')  
       cy.fixture('user-data')
-        .then(data => {
-          let uname = data[0].username
-          let pass = data[0].password
-          cy.login(uname, pass)
-      });
+            .then(data => {
+                let user = data[0];
+                cy.get('[formControlName=username]').type(user.username);
+                cy.get('[formControlName=password]').type(user.password);
+                cy.get('[type=submit]').first().click();
+            })
     });
     
     it('Logouts user', () => {
