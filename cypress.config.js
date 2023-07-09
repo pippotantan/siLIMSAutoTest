@@ -8,7 +8,7 @@ module.exports = defineConfig({
   
   defaultCommandTimeout: 10000,
   e2e: {
-    baseUrl:'http://silims.sitrovainnovation.com',
+    baseUrl:'http://silims2.sitrovainnovation.com',
     specPattern: 'cypress/e2e/login-user.spec.js',
     testIsolation: false
   }
